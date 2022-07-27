@@ -6,3 +6,4 @@ O objetivo desse projeto é automatizar tarefas, fazendo com que nosso computado
 
 ## Análise de Dados em Python - Aula 02
 Nesse projeto, tratamos os dados de uma tabela e analisamos para criarmos gráficos com as informações fornecidas.
+Usei uma biblioteca nesse projeto chamada plotly, que foi usada para gerar o gráfico. Como estou no VScode, ele abre o gráfico em uma aba do navegador. Para visualizar, basta recarregar a página.

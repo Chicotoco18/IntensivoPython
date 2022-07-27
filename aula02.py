@@ -1,5 +1,7 @@
 # Passo 1 - Importar a base de dados
+from cgitb import text
 from pickle import TRUE
+import plotly.express as px;
 import pandas as pd;
 tabela = pd.read_csv('telecom_users.csv')
 
@@ -26,3 +28,10 @@ print(tabela["Churn"].value_counts()) # Verificar quantos clientes cancelaram ou
 print(tabela["Churn"].value_counts(normalize= True).map("{:.1%}".format)) # normalize = True mostra os valores para conversão de percentual
 
 # Passo 5 - Descobrir os motivos do cancelamento
+# etapa 1 - criar o gráfico
+for coluna in tabela.columns:
+    grafico = px.histogram(tabela, x=coluna, color="Churn", text_auto=True)
+    # etapa 2 - exibir o gráfico
+    grafico.show()
+# Com os gráficos criados, podemos analisar e tirarmos as conclusões sobre o serviço.
+# Analisando os dados, é possível ver que clientes novos tendem a desistir mais sobre o serviço, tendo em vista que mais de 300 clientes desistiram no primeiro mês de assinatura.
